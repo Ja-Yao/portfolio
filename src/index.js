@@ -8,12 +8,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#D05353',
-      contrastText: '#131318'
+      main: '#4285F4',
+      contrastText: '#1D2029',
     }
   },
   typography: {
-    fontFamily: 'Poppins',
+    fontFamily: ['Poppins', 'Alpha Slab One'].join(','),
   }
 });
 
