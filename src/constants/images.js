@@ -1,34 +1,34 @@
-import api from '../assets/api.png';
-import css from '../assets/css.png';
-import figma from '../assets/figma.png';
-import git from '../assets/git.png';
-import html from '../assets/html.png';
-import javascript from '../assets/javascript.png';
-import mu5 from '../assets/mu5.png';
-import node from '../assets/node.png';
-import react from '../assets/react.png';
-import redux from '../assets/redux.png';
-import sass from '../assets/sass.png';
-import UX from '../assets/UX.jpg';
-import frontend from '../assets/frontend.jpg'
+import { ref, getDownloadURL } from 'firebase/storage';
+import { storage } from '../client';
 
-import portrait from '../assets/portrait.jpg';
-import circle from '../assets/circle.svg';
+
+getDownloadURL(ref(storage, 'assets/css.png'));
+getDownloadURL(ref(storage, 'assets/figma.png'));
+getDownloadURL(ref(storage, 'assets/git.png'));
+getDownloadURL(ref(storage, 'assets/html.png'));
+getDownloadURL(ref(storage, 'assets/javascript.png'));
+getDownloadURL(ref(storage, 'assets/mu5.png'));
+getDownloadURL(ref(storage, 'assets/node.png'));
+getDownloadURL(ref(storage, 'assets/react.png'));
+getDownloadURL(ref(storage, 'assets/redux.png'));
+getDownloadURL(ref(storage, 'assets/sass.png'));
+const portrait = getDownloadURL(ref(storage, 'assets/portrait.png')).then(url => {
+  const portraitElement = document.getElementById('portrait-img');
+  portraitElement.setAttribute('src', url);
+});
+getDownloadURL(ref(storage, 'assets/circle.svg'));
 
 export default {
-  api,
-  css,
-  figma,
-  git,
-  html,
-  javascript,
-  mu5,
-  node,
-  react,
-  redux,
-  sass,
+  // css,
+  // figma,
+  // git,
+  // html,
+  // javascript,
+  // mu5,
+  // node,
+  // react,
+  // redux,
+  // sass,
   portrait,
-  circle,
-  UX,
-  frontend,
+  // circle,
 };
