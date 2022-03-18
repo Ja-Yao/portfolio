@@ -1,0 +1,20 @@
+.app__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 80vh;
+  padding: 5rem 2rem 0rem;
+}
+
+.app__contact-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__contact-form-container {
+  width: 600px;
+  margin-top: 0.75rem;
+}

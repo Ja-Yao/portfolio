@@ -1,61 +1,113 @@
-import React, {useState} from "react";
-import "./Navbar.scss";
-import {motion} from "framer-motion";
-import {Box, Button, IconButton, Stack} from "@mui/material";
-import {pages} from "../../constants/pages";
-import {Close, Menu} from "@mui/icons-material";
+import React, {useState} from 'react';
+import './Navbar.scss';
+import {
+	Box,
+	Button,
+	ClickAwayListener,
+	IconButton,
+	List,
+	ListItem,
+	Stack,
+	SwipeableDrawer,
+	useTheme
+} from '@mui/material';
+import {pages} from '../../constants/pages';
+import {Menu, ModeNightOutlined} from '@mui/icons-material';
+import {makeStyles} from '@mui/styles';
+
+const useStyles = makeStyles({
+	iconFill: {
+		color: 'var(--scroll-bar-color)',
+		'&:hover': {
+			color: 'var(--first-color)'
+		},
+		transition: 'all 0.3s ease-in-out'
+	}
+});
 
 const Navbar = () => {
-	const [open, setOpen] = useState(false);
+	const theme = useTheme();
+	const classes = useStyles();
+	const [state, setState] = useState(false);
 
-	const handleOpen = e => {
-		e.preventDefault();
-		setOpen(true);
+	const iOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+	const toggleDrawer = () => {
+		setState(!state);
 	};
 
-	const handleClose = e => {
-		e.preventDefault();
-		setOpen(false);
-	};
+	const list = () => (
+		<ClickAwayListener onClickAway={toggleDrawer}>
+			<Box sx={{width: 250}} role='presentation' onClick={toggleDrawer} onKeyDown={toggleDrawer}>
+				<List>
+					{pages.map((text, index) => (
+						<ListItem key={text} sx={{width: '100%'}}>
+							<Button
+								variant='text'
+								onClick={() => document.getElementById(`${text.toLowerCase()}`).scrollIntoView(true, {behavior: 'smooth'})
+								}
+								href={text === 'Home' ? `#` : `#${text}`}
+								sx={{color: theme.palette.primary.main}}
+							>
+								{text}
+							</Button>
+						</ListItem>
+					))}
+				</List>
+			</Box>
+		</ClickAwayListener>
+	);
 
 	return (
-		<nav className='app__navbar'>
-			<div className='app__navbar-logo'>{/* <img /> */}</div>
+		<Box className='app__navbar'>
 			<Box className='app__navbar-links'>
+				<Button
+					variant='text'
+					onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+					href='#'
+					sx={{fontWeight: 600}}
+				>
+					Jacob
+				</Button>
 				<Stack direction='row' spacing={5}>
 					{pages.map(page => (
-						<Button key={page} variant='text' href={`#${page}`} id={`app__navbar-${page}-button`}>
+						<Button
+							key={page}
+							variant='text'
+							onClick={() => document.getElementById(`${page.toLowerCase()}`).scrollIntoView(true, {behavior: 'smooth'})
+							}
+							href={page === 'Home' ? `#` : `#${page}`}
+							id={`app__navbar-${page}-button`}
+						>
 							{page}
 						</Button>
 					))}
+					<IconButton
+						variant='text'
+						// onClick={}
+						id='app__navbar-night-mode-button'
+						className={classes.iconFill}
+					>
+						<ModeNightOutlined />
+					</IconButton>
 				</Stack>
 			</Box>
-
 			<Box className='app__navbar-menu'>
-				<IconButton onClick={handleOpen}>
-					<Menu />
+				<IconButton onClick={toggleDrawer}>
+					<Menu color='primary' />
 				</IconButton>
-
-				{open && (
-					<motion.div whileInView={{x: [250, 0]}} transition={{duration: 0.85, ease: "easeOut"}}>
-						<Box>
-							<IconButton onClick={handleClose}>
-								<Close />
-							</IconButton>
-							<ul>
-								{pages.map(page => (
-									<li>
-										<Button key={page} variant='text' href={`#${page}`} id={`app__navbar-${page}-button`}>
-											{page}
-										</Button>
-									</li>
-								))}
-							</ul>
-						</Box>
-					</motion.div>
-				)}
+				<SwipeableDrawer
+					disableBackdropTransition={!iOS}
+					disableDiscovery={iOS}
+					anchor='right'
+					open={state}
+					onClose={toggleDrawer}
+					onOpen={toggleDrawer}
+				>
+					{list('right')}
+				</SwipeableDrawer>
 			</Box>
-		</nav>
+		</Box>
 	);
 };
 

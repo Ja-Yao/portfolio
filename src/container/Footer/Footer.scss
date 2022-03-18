@@ -1,0 +1,17 @@
+.app__footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--first-color);
+  height: 200px;
+}
+
+.app__footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 0rem 5rem 0rem;
+  color: var(--container-color);
+}

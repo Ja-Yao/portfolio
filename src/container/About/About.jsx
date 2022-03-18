@@ -1,54 +1,108 @@
-import React, { useState, useEffect} from "react";
+import React from 'react';
 import './About.scss';
-import { Box, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-
+import { Box, Button, Card, CardContent, Grid, Stack, Typography } from '@mui/material';
+import {SaveAltRounded} from '@mui/icons-material';
+import { storage } from '../../client';
+import {getDownloadURL, ref} from 'firebase/storage';
 import { images } from '../../constants';
 
-const abouts = [
-	{
-		title: "Front-End Development",
-		description: "I am a strong frontend developer",
-		imageTitle: "3D Geometric Digital Poster Art",
-		designer: " by Anthony Gribben",
-		imageUrl: images.frontend
-	},
-	{
-		title: "UI/UX",
-		description: "Creating user interfaces is my passion",
-		imageTitle: "",
-		designer: "",
-		imageUrl: images.UX
-	}
-];
-
 const About = () => {
-  return (
-		<>
-			<Typography variant='h3' className='head-text'>
-				I know that
-				<span> Good Apps </span>
-				<br />
-				mean
-				<span> Good Business</span>
-			</Typography>
 
-      <Grid container classname='app__profiles' spacing={5}>
-				{abouts.map((item, index) => (
-          <Grid item xs={12} md={4}>
-						<Card className='app__profile-item' key={item.title + index} sx={{borderRadius: "20px"}}>
-							<CardMedia component='img' src={item.imageUrl} alt={item.imageTitle + item.designer} />
-							<CardContent>
-								<Typography variant='body1' fontWeight='600'>
-									{item.title}
-								</Typography>
-								<Typography variant='body1'>{item.description}</Typography>
-							</CardContent>
-						</Card>
-					</Grid>
-				))}
+	const handleDownload = async (e) => {
+		e.preventDefault();
+		const pdf = await getDownloadURL(ref(storage, 'Jacob-Yao-Resume.pdf'));
+		window.location.href = pdf;
+	}
+
+	return (
+		<Box id='about' className='app__about'>
+			<Typography id='app__about-title' variant='h3' fontFamily={'Alfa Slab One'}>
+				About Me
+			</Typography>
+			<Grid container id='app__about-content' className='container app__about-content'>
+				<Grid item width='50%'>
+					<img id='about-img' alt='about-section-img' src={images.portrait2} />
+				</Grid>
+				<Grid item className='app__about-content-item'>
+					<Card elevation={0} sx={{borderRadius: '15px', backgroundColor: 'var(--container-color)', ml: '3rem'}}>
+						<CardContent>
+							<Typography variant='body1' sx={{mb: '0.75rem'}}>
+								Computer Engineering student at Northeastern University with experience, knowledge, and a passion for
+								web development & UI design. Looking to further develop frontend skills and knowledge in particular,
+								but am open to more full stack experience.
+							</Typography>
+							<Stack direction='row' spacing={4}>
+								<Card
+									elevation={0}
+									sx={{
+										borderRadius: '15px',
+										maxWidth: '200px',
+										backgroundColor: 'var(--container-color)'
+									}}
+								>
+									<CardContent>
+										<Typography variant='h6' sx={{fontWeight: 'var(--font-semi-bold)'}}>
+											5+
+										</Typography>
+										<Typography variant='body2' sx={{fontWeight: 'var(--font-medium)'}}>
+											Years CS experience
+										</Typography>
+									</CardContent>
+								</Card>
+								<Card
+									elevation={0}
+									sx={{
+										borderRadius: '15px',
+										maxWidth: '200px',
+										backgroundColor: 'var(--container-color)'
+									}}
+								>
+									<CardContent>
+										<Typography variant='h6' sx={{fontWeight: 'var(--font-semi-bold)'}}>
+											1+
+										</Typography>
+										<Typography variant='body2' sx={{fontWeight: 'var(--font-medium)'}}>
+											Years front-end experience
+										</Typography>
+									</CardContent>
+								</Card>
+								<Card
+									elevation={0}
+									sx={{
+										borderRadius: '15px',
+										maxWidth: '200px',
+										backgroundColor: 'var(--container-color)'
+									}}
+								>
+									<CardContent>
+										<Typography variant='h6' sx={{fontWeight: 'var(--font-semi-bold)'}}>
+											1
+										</Typography>
+										<Typography variant='body2' sx={{fontWeight: 'var(--font-medium)'}}>
+											Companies worked
+										</Typography>
+									</CardContent>
+								</Card>
+							</Stack>
+							<Button
+								variant='contained'
+								onClick={e => handleDownload(e)}
+								sx={{
+									mt: '0.75rem',
+									borderRadius: '15px',
+									backgroundColor: 'var(--first-color)',
+									color: 'var(--container-color)'
+								}}
+							>
+								Dowload Resumé
+								<SaveAltRounded sx={{ml: '0.75rem'}} />
+							</Button>
+						</CardContent>
+					</Card>
+				</Grid>
 			</Grid>
-		</>
+		</Box>
 	);
-}
+};
 
 export default About;

@@ -1,0 +1,19 @@
+.app__experience {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  min-height: 60vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem 0rem;
+}
+
+.app__experience-modal {
+  background-color: var(--container-color);
+  width: 500px;
+  height: 500px;
+  padding: 2rem 2rem 0rem;
+
+  border-radius: 15px;
+}

@@ -2,16 +2,19 @@
 	width: 100%;
 
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 
 	padding: 1rem 2rem;
-	background: rgba(255, 255, 255, 0.25);
+	background: rgba(252, 252, 252, 0.25);
 	backdrop-filter: blur(3px);
 	-webkit-backdrop-filter: blur(3px);
-	border: 1px solid rgba(255, 255, 255, 0.18);
 	position: fixed;
 	z-index: 2;
+
+	@media screen and (max-width: 899px) {
+		justify-content: flex-end;
+	}
 }
 
 .app__navbar-logo {
@@ -33,13 +36,13 @@
 .app__navbar-links {
 	flex: 1;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
 	list-style: none;
 
 	a {
 		cursor: pointer;
-		color: var(--gray-color);
+		color: var(--scroll-bar-color);
 		text-decoration: none;
 		flex-direction: column;
 		border-radius: 13px;
@@ -50,7 +53,7 @@
 		transition: all 0.3s ease-in-out;
 
 		&:hover {
-			color: var(--secondary-color);
+			color: var(--first-color);
 		}
 	}
 
@@ -67,80 +70,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: var(--secondary-color);
+	background-color: var(--primary-color);
 
-	svg {
-		color: var(--white-color);
+	@media screen and (min-width: 900px) {
+		display: none;
 	}
-
-	div {
-		position: fixed;
-		top: 0;
-		bottom: 0;
-		right: 0;
-		z-index: 5;
-
-		padding: 1rem;
-		width: 80%;
-		height: 100vh;
-
-		display: flex;
-		justify-content: flex-end;
-		align-items: flex-end;
-		flex-direction: column;
-
-		background: url("../../assets//bgWhite.png");
-		background-color: var(--white-color);
-		background-size: cover;
-		background-repeat: repeat;
-
-		box-shadow: 0 0 20px rgba(168, 168, 168, 0.25);
-
-		svg {
-			width: 35px;
-			height: 35px;
-			color: var(--secondary-color);
-		}
-
-		ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-
-			li {
-        margin: 1rem;
-
-				a {
-					cursor: pointer;
-					color: var(--gray-color);
-					text-decoration: none;
-					flex-direction: column;
-					border-radius: 13px;
-
-					text-transform: uppercase;
-					font-weight: 500;
-
-					transition: all 0.3s ease-in-out;
-
-					&:hover {
-						color: var(--secondary-color);
-					}
-				}
-			}
-		}
-
-    @media screen and (min-width: 900px) {
-      display: none;
-    }
-	}
-  @media screen and (min-width: 900px) {
-      display: none;
-    }
 }
