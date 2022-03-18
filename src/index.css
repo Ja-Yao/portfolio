@@ -14,7 +14,7 @@
   --text-color-light: hsl(var(--hue-color), 8%, 65%);
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
-  --container-color: #FCFCFC;
+  --container-color: #FBFCFE;
   --scroll-bar-color: hsl(var(--hue-color), 12%, 60%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 
@@ -69,7 +69,6 @@
 }
 
 body {
-  margin: 0 0 var(--header-height) 0;
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
@@ -107,6 +106,10 @@ img {
 .section__title, 
 .section__subtitle {
   text-align: center;
+}
+
+.send-icon {
+  margin-left: 0.25rem;
 }
 
 /*==================== LAYOUT ====================*/
