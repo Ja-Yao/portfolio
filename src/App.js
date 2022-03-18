@@ -1,19 +1,29 @@
+import React, { lazy, Suspense } from 'react';
 import './App.scss';
 
-import { About, Experience, Skills, Header, Footer, Contact } from './container';
+import { Header } from './container';
 import { Navbar } from './components';
+import { Box, CircularProgress } from '@mui/material';
+
+const About = lazy(() => import('./container/About/About'));
+const Skills = lazy(() => import('./container/Skills/Skills'));
+const Experience = lazy(() => import('./container/Experience/Experience'));
+const Contact = lazy(() => import('./container/Contact/Contact'));
+const Footer = lazy(() => import('./container/Footer/Footer'));
 
 function App() {
   return (
-    <div className="app">
-      <Navbar />
-      <Header/>
-      <About/>
-      <Skills/>
-      <Experience />
-      <Contact/>
-      <Footer/>
-    </div>
+    <Suspense fallback={<Box justifyContent='center' alignItems='center'><CircularProgress sx={{color: 'var(--first-color)'}}/></Box>}>
+      <div className="app">
+        <Navbar />
+        <Header />
+        <About />
+        <Skills />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
+    </Suspense>
   );
 }
 
