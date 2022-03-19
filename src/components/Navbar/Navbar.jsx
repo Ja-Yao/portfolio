@@ -12,22 +12,10 @@ import {
 	useTheme
 } from '@mui/material';
 import {pages} from '../../constants/pages';
-import {Menu, ModeNightOutlined} from '@mui/icons-material';
-import {makeStyles} from '@mui/styles';
-
-const useStyles = makeStyles({
-	iconFill: {
-		color: 'var(--scroll-bar-color)',
-		'&:hover': {
-			color: 'var(--first-color)'
-		},
-		transition: 'all 0.3s ease-in-out'
-	}
-});
+import {Menu} from '@mui/icons-material';
 
 const Navbar = () => {
 	const theme = useTheme();
-	const classes = useStyles();
 	const [state, setState] = useState(false);
 
 	const iOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -82,14 +70,6 @@ const Navbar = () => {
 							{page}
 						</Button>
 					))}
-					<IconButton
-						variant='text'
-						// onClick={}
-						id='app__navbar-night-mode-button'
-						className={classes.iconFill}
-					>
-						<ModeNightOutlined />
-					</IconButton>
 				</Stack>
 			</Box>
 			<Box className='app__navbar-menu'>
