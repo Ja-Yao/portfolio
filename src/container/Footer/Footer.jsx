@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.scss';
-import {Box, Button, Container, Grid, Stack, Typography} from '@mui/material';
+import {Box, Button, Grid, Stack, Typography} from '@mui/material';
 import {pages} from '../../constants/pages';
 import {CopyrightRounded} from '@mui/icons-material';
 import Socials from '../../components/Socials';

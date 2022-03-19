@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './Contact.scss';
-import {Alert, Box, Button, CircularProgress, Grid, Snackbar, Stack, TextField, Typography} from '@mui/material';
+import {Alert, Box, Button, CircularProgress, Snackbar, Stack, TextField, Typography} from '@mui/material';
 import {motion} from 'framer-motion';
 import {collection, addDoc} from 'firebase/firestore';
 import {db} from '../../client';
