@@ -63,6 +63,6 @@ export const backendTools = [
 
 export const BCDesc = {
   first: "My experience in the tech industry started at BlackCape. BlackCape is a small software engineering firm working to provide quality products for their clients in the Government and Commercial sectors.",
-  second: "While at BlackCape, I worked closely with industry-leading engineers to provide performance improvements and new features to applications. However, due to the nature of the clientele that Black Cape conducts business with, I am not at liberty to disclose any specifics of the projects or teams I worked on.",
-  third: "If it is something of interest, I'd be happy to talk about any public knowledge or discuss general tool usage(i.e.languages, frameworks, etc.) in private."
+  second: "While at BlackCape, I worked closely with industry-leading engineers to provide performance improvements and new features to applications. However, due to the nature of the clientele that BlackCape conducts business with, I am not at liberty to disclose any specifics of the projects or teams I worked on.",
+  third: "If it is something of interest, I'd be happy to talk about any public knowledge or discuss general tool usage (i.e.languages, frameworks, etc.) in private."
 }

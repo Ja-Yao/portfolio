@@ -161,7 +161,7 @@ const Experience = () => {
 								>
 									<Box className='app__experience-modal'>
 										<Typography variant='h4' fontWeight={'var(--font-semi-bold)'}>
-											Black Cape, Inc.
+											BlackCape, Inc.
 										</Typography>
 										<Typography variant='body1' sx={{mt: '1rem', color: 'var(--text-color)', fontSize: 'var(--small-font-size)'}}>
 											{`${BCDesc.first}`}
