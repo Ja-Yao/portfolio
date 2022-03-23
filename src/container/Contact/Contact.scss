@@ -6,6 +6,10 @@
   width: 100%;
   min-height: 90vh;
   padding: 5rem 2rem 0rem;
+
+  @media screen and (max-width: 2000px) {
+    padding-bottom: 5rem;
+  }
 }
 
 .app__contact-form {
