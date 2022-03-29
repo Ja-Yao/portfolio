@@ -1,6 +1,9 @@
 import { ref, getDownloadURL } from 'firebase/storage';
 import { storage } from '../client';
 
+// This is where all the images get pulled from the firebase store to be
+// loaded into the html. Add or remove these based on what you want to
+// display in the final page.
 
 const css = getDownloadURL(ref(storage, 'assets/css.png')).then(url => {
   const cssElement = document.getElementById('CSS-img');
