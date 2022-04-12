@@ -11,14 +11,14 @@ const Header = () => {
 		<Box id='home' className='app__header app__flex' sx={{gap: 3}}>
 			<motion.div
 				whileInView={{x: [-100, 0], y: [100, 100], opacity: [0, 1]}}
-				transition={{duration: 0.5, delay: 0.25}}
+				transition={{duration: 0.5, delay: 0.15}}
 				className='app__header-info'
 			>
 				<Socials color={ 'var(--first-color)'}/>
 			</motion.div>
 			<motion.div
 				whileInView={{ y: [-100, -100], opacity: [0, 1] }}
-				transition={{ duration: 1, delay: 0.75 }}
+				transition={{ duration: 1, delay: 0.45 }}
 				className='app__header-badge'
 			>
 				<Box marginBottom={'0.75rem'}>
@@ -53,7 +53,7 @@ const Header = () => {
 
 			<motion.div
 				whileInView={{ x: [-100, 50], y: [-100, -100], opacity: [0, 1] }}
-				transition={{ duration: 1.5, delay: 1 }}
+				transition={{ duration: 1.5, delay: 0.65 }}
 			>
 				<img id='portrait-img' src={images.portrait} alt='header-portrait' height='750px' width='750px' />
 			</motion.div>

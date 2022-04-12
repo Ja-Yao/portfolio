@@ -47,10 +47,6 @@ export const backendTools = [
     years: '< 1 year',
   },
   {
-    name: 'PostGreSQL',
-    years: '< 1 year',
-  },
-  {
     name: 'Python',
     years: '2 years',
   },

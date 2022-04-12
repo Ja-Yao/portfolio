@@ -157,7 +157,7 @@ const Experience = () => {
 									onClose={handleClose}
 									aria-labelledby='experience-modal-title'
 									aria-describedby='experience-modal-description'
-									sx={{top: '25%', left: '37.5%'}}
+									sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
 								>
 									<Box className='app__experience-modal'>
 										<Typography variant='h4' fontWeight={'var(--font-semi-bold)'}>

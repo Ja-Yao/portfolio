@@ -54,7 +54,7 @@ const Contact = () => {
 	return (
 		<motion.div
 			whileInView={{y: [-80, 0], opacity: [0, 1]}}
-			transition={{delay: 0.75}}
+			transition={{delay: 0.25}}
 			id='contact'
 			className='app__contact'
 		>
@@ -82,12 +82,12 @@ const Contact = () => {
 				<motion.div
 					id='form-motion-div'
 					whileInView={{opacity: [0, 1]}}
-					transition={{delay: 1}}
+					transition={{delay: 0.5}}
 					className='app__contact-form'
 				>
 					<Box className='app__contact-form-container'>
 						<Box id='contact-info'>
-							<Stack direction='row' justifyContent={'space-between'}>
+							<Stack direction={(window.innerWidth < 500) ? 'column' : 'row'} justifyContent={'space-between'}>
 								<Stack direction='row' spacing={1}>
 									<i className='uil uil-phone'></i>
 									<Typography variant='body1' sx={{color: 'var(--text-color)'}}>

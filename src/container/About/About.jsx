@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.scss';
 import { Box, Button, Card, CardContent, Grid, Stack, Typography } from '@mui/material';
-import {SaveAltRounded} from '@mui/icons-material';
+import {VisibilityRounded} from '@mui/icons-material';
 import { storage } from '../../client';
 import {getDownloadURL, ref} from 'firebase/storage';
 import { images } from '../../constants';
@@ -45,7 +45,7 @@ const About = () => {
 											5+
 										</Typography>
 										<Typography variant='body2' sx={{fontWeight: 'var(--font-medium)'}}>
-											Years CS experience
+											Years coding experience
 										</Typography>
 									</CardContent>
 								</Card>
@@ -94,8 +94,8 @@ const About = () => {
 									color: 'var(--container-color)'
 								}}
 							>
-								Dowload Resumé
-								<SaveAltRounded sx={{ml: '0.75rem'}} />
+								View Resumé
+								<VisibilityRounded sx={{ml: '0.75rem'}} />
 							</Button>
 						</CardContent>
 					</Card>

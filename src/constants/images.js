@@ -33,14 +33,6 @@ const react = getDownloadURL(ref(storage, 'assets/react.png')).then(url => {
   const reactElement = document.getElementById('React-img');
   reactElement.setAttribute('src', url);
 });
-const redux = getDownloadURL(ref(storage, 'assets/redux.png')).then(url => {
-  const reduxElement = document.getElementById('Redux-img');
-  reduxElement.setAttribute('src', url);
-});
-const sass = getDownloadURL(ref(storage, 'assets/sass.png')).then(url => {
-  const sassElement = document.getElementById('SASS-img');
-  sassElement.setAttribute('src', url);
-});
 const portrait = getDownloadURL(ref(storage, 'assets/portrait.png')).then(url => {
   const portraitElement = document.getElementById('portrait-img');
   portraitElement.setAttribute('src', url);
@@ -48,10 +40,6 @@ const portrait = getDownloadURL(ref(storage, 'assets/portrait.png')).then(url =>
 const portrait2 = getDownloadURL(ref(storage, 'assets/portrait-2.jpg')).then(url => {
   const portraitElement = document.getElementById('about-img');
   portraitElement.setAttribute('src', url);
-});
-const postgresql = getDownloadURL(ref(storage, 'assets/postgresql.png')).then(url => {
-  const postgreElement = document.getElementById('PostGreSQL-img');
-  postgreElement.setAttribute('src', url);
 });
 const python = getDownloadURL(ref(storage, 'assets/python.png')).then(url => {
   const pythonElement = document.getElementById('Python-img');
@@ -83,11 +71,8 @@ export default {
   javascript,
   mu5,
   react,
-  redux,
-  sass,
   portrait,
   portrait2,
-  postgresql,
   python,
   firebase,
   flask,
