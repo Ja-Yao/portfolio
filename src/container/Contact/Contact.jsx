@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import './Contact.scss';
-import {Alert, Box, Button, CircularProgress, Snackbar, Stack, TextField, Typography} from '@mui/material';
+import {Alert, Box, Button, CircularProgress, Link, Snackbar, Stack, TextField, Typography} from '@mui/material';
 import {motion} from 'framer-motion';
 import {collection, addDoc} from 'firebase/firestore';
 import {db} from '../../client';
 
+
+/**
+ * Renders a form that allows users to send me a message
+ */
 const Contact = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isSent, setIsSent] = useState(false);
@@ -58,16 +62,16 @@ const Contact = () => {
 			id='contact'
 			className='app__contact'
 		>
-			<Typography variant='h3' fontFamily={'Alfa Slab One'}>
+			<Typography variant='h3' fontFamily={"Alfa Slab One"}>
 				Contact Me
 			</Typography>
-			<Typography variant='h6' fontWeight={'var(--font-medium)'}>
+			<Typography variant='h6' fontWeight={"var(--font-medium)"}>
 				Feel free to reach out with any questions!
 			</Typography>
-			<Box width={'100%'}>
+			<Box width={"100%"}>
 				{isSent ? (
 					<Snackbar
-						anchorOrigin={{vertical: 'bottom', horizontal: 'left'}}
+						anchorOrigin={{vertical: "bottom", horizontal: "left"}}
 						open={isSent}
 						onClose={handleClose}
 						autoHideDuration={5000}
@@ -87,22 +91,27 @@ const Contact = () => {
 				>
 					<Box className='app__contact-form-container'>
 						<Box id='contact-info'>
-							<Stack direction={(window.innerWidth < 500) ? 'column' : 'row'} justifyContent={'space-between'}>
+							<Stack direction={window.innerWidth < 500 ? "column" : "row"} justifyContent={"space-between"}>
 								<Stack direction='row' spacing={1}>
 									<i className='uil uil-phone'></i>
-									<Typography variant='body1' sx={{color: 'var(--text-color)'}}>
+									<Typography variant='body1' sx={{color: "var(--text-color)"}}>
 										(802) 735-7678
 									</Typography>
 								</Stack>
 								<Stack direction='row' spacing={1}>
 									<i className='uil uil-envelope'></i>
-									<Typography variant='body1' sx={{color: 'var(--text-color)'}}>
+									<Link
+										underline='hover'
+										variant='body1'
+										href='mailto:yao@ja.northeastern.edu'
+										sx={{color: "var(--text-color)"}}
+									>
 										yao.ja@northeastern.edu
-									</Typography>
+									</Link>
 								</Stack>
 							</Stack>
 						</Box>
-						<Box id='form' sx={{mt: '0.5rem'}}>
+						<Box id='form' sx={{mt: "0.5rem"}}>
 							<Stack spacing={2}>
 								<TextField
 									variant='outlined'
@@ -110,7 +119,7 @@ const Contact = () => {
 									value={name}
 									placeholder='Name'
 									onChange={e => setName(e.target.value)}
-									sx={{color: 'var(--first-color)'}}
+									sx={{color: "var(--first-color)"}}
 								/>
 								<TextField
 									variant='outlined'
@@ -118,7 +127,7 @@ const Contact = () => {
 									value={email}
 									placeholder='Email'
 									onChange={e => setEmail(e.target.value)}
-									sx={{color: 'var(--first-color)'}}
+									sx={{color: "var(--first-color)"}}
 								/>
 								<TextField
 									variant='outlined'
@@ -129,7 +138,7 @@ const Contact = () => {
 									minRows={12}
 									maxRows={20}
 									onChange={e => setMessage(e.target.value)}
-									sx={{color: 'var(--first-color)'}}
+									sx={{color: "var(--first-color)"}}
 								/>
 							</Stack>
 							<Box>
@@ -139,20 +148,20 @@ const Contact = () => {
 										onClick={handleSubmit}
 										variant='contained'
 										size='medium'
-										sx={{borderRadius: '15px', mt: '0.75rem', color: 'var(--container-color)'}}
+										sx={{borderRadius: "15px", mt: "0.75rem", color: "var(--container-color)"}}
 									>
 										Send
 										<i className='uil uil-message'></i>
 									</Button>
 								) : isLoading ? (
-									<CircularProgress sx={{color: 'var(--first-color)'}} />
+									<CircularProgress sx={{color: "var(--first-color)"}} />
 								) : (
 									<Button
 										aria-label='send-email-button'
 										disabled
 										variant='contained'
 										size='medium'
-										sx={{borderRadius: '15px', mt: '0.75rem', color: 'var(--container-color)'}}
+										sx={{borderRadius: "15px", mt: "0.75rem", color: "var(--container-color)"}}
 									>
 										Send
 										<i className='uil uil-message send-icon'></i>

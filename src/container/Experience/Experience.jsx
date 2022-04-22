@@ -4,6 +4,10 @@ import {Box, Button, Modal, Stack, Tab, Tabs, Typography} from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import {BCDesc} from '../../constants';
 
+/**
+ * The Experience component is a functional component that renders a timeline of my Education and
+ * professional background
+ */
 const Experience = () => {
 	const [value, setValue] = useState('one');
 	const [open, setOpen] = useState(false);
@@ -48,7 +52,7 @@ const Experience = () => {
 						<TimelineContent>
 							<Box width={'30px'}>
 								<Typography
-									varint='body1'
+									varint='h6'
 									fontSize={'var(--normal-font-size)'}
 									fontWeight={'var(--font-semi-bold)'}
 									sx={{width: '150px'}}
@@ -75,7 +79,7 @@ const Experience = () => {
 						<TimelineContent>
 							<Box width={'30px'}>
 								<Typography
-									varint='body1'
+									varint='h6'
 									fontSize={'var(--normal-font-size)'}
 									fontWeight={'var(--font-semi-bold)'}
 									sx={{width: '300px'}}
@@ -102,7 +106,7 @@ const Experience = () => {
 						<TimelineContent>
 							<Box width={'30px'}>
 								<Typography
-									varint='body1'
+									varint='h6'
 									fontSize={'var(--normal-font-size)'}
 									fontWeight={'var(--font-semi-bold)'}
 									sx={{width: '300px'}}
@@ -133,7 +137,7 @@ const Experience = () => {
 						<TimelineContent>
 							<Box width={'30px'}>
 								<Typography
-									varint='body1'
+									varint='h6'
 									fontSize={'var(--normal-font-size)'}
 									fontWeight={'var(--font-semi-bold)'}
 									sx={{width: '300px'}}

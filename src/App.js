@@ -11,6 +11,9 @@ const Experience = lazy(() => import('./container/Experience/Experience'));
 const Contact = lazy(() => import('./container/Contact/Contact'));
 const Footer = lazy(() => import('./container/Footer/Footer'));
 
+/**
+ * The App component is a functional component that renders the entire website
+ */
 function App() {
   return (
     <Suspense fallback={<Box justifyContent='center' alignItems='center'><CircularProgress sx={{color: 'var(--first-color)'}}/></Box>}>

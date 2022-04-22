@@ -12,6 +12,10 @@ import {
 import {ExpandMoreRounded} from '@mui/icons-material';
 import {frontendTools, designTools, backendTools} from '../../constants';
 
+/**
+ * The Skills component is a functional component that renders accordions with various
+ * tools and my exposure to them
+ */
 const Skills = () => {
 	const [isOpen, setIsOpen] = useState('panel1');
 
@@ -27,7 +31,7 @@ const Skills = () => {
 					Skills
 				</Typography>
 				<Typography variant='h6' textAlign={'center'} sx={{fontWeight: 'var(--font-medium)'}}>
-					My technical experience
+					My technical experience with various industry tools
 				</Typography>
 			</Box>
 			<Grid container className='app__skills-content' spacing={8}>

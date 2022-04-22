@@ -43,10 +43,6 @@ export const designTools = [
 // Array of objects describing the backend accordion
 export const backendTools = [
   {
-    name: 'Flask',
-    years: '< 1 year',
-  },
-  {
     name: 'Python',
     years: '2 years',
   },

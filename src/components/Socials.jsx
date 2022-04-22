@@ -1,22 +1,13 @@
 import React from 'react';
 import { Box, IconButton, Stack } from '@mui/material';
 import { LinkedIn, Instagram } from '@mui/icons-material';
-// import { makeStyles } from '@mui/styles';
 
-// const useStyles = makeStyles({
-// 	iconFill: {
-// 		width: '40px',
-// 		height: '40px',
-// 		color: 'var(--scroll-bar-color)',
-// 		'&:hover': {
-// 			color: 'var(--first-color)'
-// 		},
-// 		transition: 'all 0.3s ease-in-out'
-// 	}
-// });
-
+/**
+ * The Social Media component is a functional component that renders the stack of 
+ * social media buttons
+ * @param {*} color - hsl representation of an sRGB color
+ */
 const Socials = (color) => {
-	// const classes = useStyles();
   return (
 		<Box className='app_socials'>
 			<Stack direction='column' spacing={2}>

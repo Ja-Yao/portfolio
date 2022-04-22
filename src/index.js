@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+/* Creating a theme for the MUI components */
 const theme = createTheme({
   palette: {
     primary: {
@@ -17,6 +18,7 @@ const theme = createTheme({
   }
 });
 
+/* Rendering the App component to the root element in the index.html file. */
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

@@ -14,16 +14,26 @@ import {
 import {pages} from '../../constants/pages';
 import {Menu} from '@mui/icons-material';
 
+/**
+ * The Navbar component is a functional component that renders the website navbar
+ */
 const Navbar = () => {
 	const theme = useTheme();
+
+	// state of the hamburger menu
 	const [state, setState] = useState(false);
 
+	// handles compatibility of hamburger menu for iOS devices
 	const iOS = typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 	const toggleDrawer = () => {
 		setState(!state);
 	};
 
+	/**
+	 * Unordered list of navigation options
+	 * @returns the hamburger menu list
+	 */
 	const list = () => (
 		<ClickAwayListener onClickAway={toggleDrawer}>
 			<Box sx={{width: 250}} role='presentation' onClick={toggleDrawer} onKeyDown={toggleDrawer}>

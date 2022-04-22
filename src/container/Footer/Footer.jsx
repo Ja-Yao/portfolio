@@ -5,6 +5,9 @@ import {pages} from '../../constants/pages';
 import {CopyrightRounded} from '@mui/icons-material';
 import Socials from '../../components/Socials';
 
+/**
+ * The Footer component is a functional component that renders the website footer
+ */
 const Footer = () => {
 	return (
 		<Box className='app__footer'>

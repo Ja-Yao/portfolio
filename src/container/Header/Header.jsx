@@ -5,8 +5,10 @@ import { images } from '../../constants';
 import { Box, Button, Typography } from '@mui/material';
 import Socials from '../../components/Socials';
 
+/**
+ * The Header component is a functional component that renders the landing page of the website
+ */
 const Header = () => {
-
 	return (
 		<Box id='home' className='app__header app__flex' sx={{gap: 3}}>
 			<motion.div
@@ -35,8 +37,7 @@ const Header = () => {
 					</Typography>
 					<Button
 						variant='contained'
-						onClick={() => document.getElementById('contact').scrollIntoView(true, {behavior: 'smooth'})}
-						href='#Contact'
+						href='mailto:yao@ja.northeastern.edu'
 						sx={{borderRadius: '18px', height: '50px', color: 'var(--container-color)'}}
 					>
 						Contact Me

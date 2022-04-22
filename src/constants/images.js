@@ -1,9 +1,11 @@
 import { ref, getDownloadURL } from 'firebase/storage';
 import { storage } from '../client';
 
-// This is where all the images get pulled from the firebase store to be
-// loaded into the html. Add or remove these based on what you want to
-// display in the final page.
+/**
+ * This is where all the images get pulled from the firebase store to be
+ * loaded into the html. Add or remove these based on what you want to
+ * display in the final page.
+ */
 
 const css = getDownloadURL(ref(storage, 'assets/css.png')).then(url => {
   const cssElement = document.getElementById('CSS-img');
@@ -49,10 +51,6 @@ const firebase = getDownloadURL(ref(storage, 'assets/firebase.png')).then(url =>
   const firebaseElement = document.getElementById('Firebase-img');
   firebaseElement.setAttribute('src', url);
 });
-const flask = getDownloadURL(ref(storage, 'assets/flask.png')).then(url => {
-  const flaskElement = document.getElementById('Flask-img');
-  flaskElement.setAttribute('src', url);
-});
 const inDesign = getDownloadURL(ref(storage, 'assets/inDesign.png')).then(url => {
   const inDesignElement = document.getElementById('Adobe InDesign-img');
   inDesignElement.setAttribute('src', url);
@@ -75,7 +73,6 @@ export default {
   portrait2,
   python,
   firebase,
-  flask,
   inDesign,
   XD,
 };
